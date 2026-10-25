@@ -1,16 +1,17 @@
 <div align="center">
 
-# LUMA STUDIO
+<a href="https://luma-studio-orpin.vercel.app">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=42&duration=2800&pause=1100&color=E7C889&center=true&vCenter=true&width=620&height=70&lines=LUMA+STUDIO;Cr%C3%A9ez+librement.+Composez+%C3%A0+votre+fa%C3%A7on." alt="LUMA STUDIO — créez librement, composez à votre façon" />
+</a>
 
 ### Le studio créatif gratuit pour donner forme à vos idées.
 
 Créez des affiches, des visuels sociaux et des compositions photo directement dans votre navigateur.
 
-<a href="public/studio.html"><strong>Ouvrir le studio →</strong></a>
+[![Ouvrir le site](https://img.shields.io/badge/Ouvrir%20le%20site-LUMA%20STUDIO-E7C889?style=for-the-badge&logo=vercel&logoColor=white)](https://luma-studio-orpin.vercel.app)
+[![Dépôt GitHub](https://img.shields.io/badge/GitHub-LUST--DEV%2FLUMA--STUDIO-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LUST-DEV/LUMA-STUDIO)
 
-<br />
-
-`GRATUIT` &nbsp; `SANS COMPTE` &nbsp; `ORDINATEUR · TABLETTE · MOBILE`
+`GRATUIT` · `SANS COMPTE` · `ORDINATEUR · TABLETTE · MOBILE`
 
 </div>
 
@@ -40,14 +41,14 @@ Le site est statique : aucun outil de compilation ni installation de dépendance
 
 ### Ouvrir directement
 
-Ouvrez [`public/index.html`](public/index.html) dans votre navigateur.
+Ouvrez [`index.html`](index.html) dans votre navigateur.
 
 ### Lancer un serveur local
 
-À la racine du projet, exécutez :
+À la racine du dépôt, exécutez :
 
 ```bash
-python -m http.server 8000 --directory public
+python -m http.server 8000
 ```
 
 Puis ouvrez [http://localhost:8000](http://localhost:8000).
@@ -57,23 +58,37 @@ Puis ouvrez [http://localhost:8000](http://localhost:8000).
 ## 🗂 Structure
 
 ```text
-public/
+.
 ├── index.html          # Page d’accueil
 ├── studio.html         # Éditeur graphique
 ├── gallery.html        # Modèles et galerie
 ├── docs.html           # Guide d’utilisation
+├── readme.md           # Présentation du projet
 └── assets/
-    ├── css/style.css   # Styles du site et de l’éditeur
+    ├── css/            # Styles du site et de l’éditeur
     ├── js/             # Interactions et logique de l’éditeur
+    ├── fonts/          # Polices
     └── images/         # Visuels, modèles et logos
 ```
 
 ## → Accès rapides
 
-- [Accueil](public/index.html)
-- [Ouvrir Luma Studio](public/studio.html)
-- [Galerie](public/gallery.html)
-- [Documentation](public/docs.html)
+- [Accueil](index.html)
+- [Ouvrir Luma Studio](studio.html)
+- [Galerie](gallery.html)
+- [Documentation](docs.html)
+- [Site en ligne](https://luma-studio-orpin.vercel.app)
+
+## ◉ Rejoindre la communauté
+
+Retrouvez les actualités et échanges de Luma Studio sur les canaux et réseaux liés depuis le site :
+
+<p>
+  <a href="https://whatsapp.com/channel/0029VbCiqwyBVJl3Jv5T4I15"><img alt="WhatsApp — communauté Luma Studio" src="https://img.shields.io/badge/WhatsApp-Canal%201-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
+  <a href="https://whatsapp.com/channel/0029VbDvjLfE50UqjuQXVJ1m"><img alt="WhatsApp — communauté Luma Studio" src="https://img.shields.io/badge/WhatsApp-Canal%202-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
+  <a href="https://t.me/Seniors_angels"><img alt="Telegram — Seniors Angels" src="https://img.shields.io/badge/Telegram-Seniors%20Angels-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"></a>
+  <a href="https://t.me/yokubo666"><img alt="Telegram — Yokubo666" src="https://img.shields.io/badge/Telegram-Yokubo666-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"></a>
+</p>
 
 ---
 
