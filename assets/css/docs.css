@@ -1,0 +1,89 @@
+.docs-figure {
+  overflow: hidden;
+  margin: 28px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: #090b0d;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+}
+
+.docs-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 820;
+  object-fit: cover;
+}
+
+.docs-figure figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.docs-figure figcaption span {
+  flex: 0 0 auto;
+  color: var(--accent-strong);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 980px) {
+  .docs-figure {
+    margin: 22px 0;
+    border-radius: 12px;
+  }
+
+  .docs-figure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+.docs-document {
+  scrollbar-color: #555149 #111111;
+  scrollbar-width: thin;
+}
+
+.docs-document::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.docs-document::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+.docs-document::-webkit-scrollbar-thumb {
+  border: 2px solid #111111;
+  border-radius: 999px;
+  background: #555149;
+}
+
+.docs-document::-webkit-scrollbar-thumb:hover {
+  background: #82765e;
+}
+
+.docs-sidebar {
+  scrollbar-color: #555149 #111111;
+  scrollbar-width: thin;
+}
+
+.docs-sidebar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.docs-sidebar::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #555149;
+}

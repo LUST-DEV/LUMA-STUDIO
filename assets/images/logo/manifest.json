@@ -1,0 +1,362 @@
+[
+  {
+    "id": "-ngels",
+    "name": "@ngels",
+    "src": "assets/images/logo/@ngels.png"
+  },
+  {
+    "id": "444crosss",
+    "name": "444Crosss",
+    "src": "assets/images/logo/444Crosss.png"
+  },
+  {
+    "id": "angels-xx",
+    "name": "angels xx",
+    "src": "assets/images/logo/angels-xx.png"
+  },
+  {
+    "id": "awsyesus",
+    "name": "awsyesus",
+    "src": "assets/images/logo/awsyesus.png"
+  },
+  {
+    "id": "banniere-l",
+    "name": "Banniere L",
+    "src": "assets/images/logo/Banniere-L.png"
+  },
+  {
+    "id": "bat",
+    "name": "bat",
+    "src": "assets/images/logo/bat.png"
+  },
+  {
+    "id": "bcground",
+    "name": "bcground",
+    "src": "assets/images/logo/bcground.png"
+  },
+  {
+    "id": "blackbirds",
+    "name": "BlackBirds",
+    "src": "assets/images/logo/BlackBirds.png"
+  },
+  {
+    "id": "bxcgriynd",
+    "name": "Bxcgriynd",
+    "src": "assets/images/logo/Bxcgriynd.png"
+  },
+  {
+    "id": "chanceoffaith",
+    "name": "ChanceofFaith",
+    "src": "assets/images/logo/ChanceofFaith.png"
+  },
+  {
+    "id": "chapelet-cruzz",
+    "name": "chapelet cruzz",
+    "src": "assets/images/logo/chapelet-cruzz.png"
+  },
+  {
+    "id": "chateaue-ck",
+    "name": "chateaue CK",
+    "src": "assets/images/logo/chateaue-CK.png"
+  },
+  {
+    "id": "chrome-angels-logo",
+    "name": "Chrome Angels logo",
+    "src": "assets/images/logo/Chrome-Angels-logo.png"
+  },
+  {
+    "id": "chrome-skull-cross",
+    "name": "Chrome skull Cross",
+    "src": "assets/images/logo/Chrome-skull-Cross.png"
+  },
+  {
+    "id": "co-horrere",
+    "name": "co horrere",
+    "src": "assets/images/logo/co_horrere.png"
+  },
+  {
+    "id": "croix-ornee",
+    "name": "Croix ornee",
+    "src": "assets/images/logo/Croix-ornee.png"
+  },
+  {
+    "id": "cross-2",
+    "name": "Cross 2",
+    "src": "assets/images/logo/Cross-2.png"
+  },
+  {
+    "id": "cross-4",
+    "name": "cross 4",
+    "src": "assets/images/logo/cross-4.png"
+  },
+  {
+    "id": "cruzz-1",
+    "name": "cruzz 1",
+    "src": "assets/images/logo/cruzz-1.png"
+  },
+  {
+    "id": "cruzz-dragon",
+    "name": "cruzz dragon",
+    "src": "assets/images/logo/cruzz-dragon.png"
+  },
+  {
+    "id": "cruzz-style",
+    "name": "cruzz style",
+    "src": "assets/images/logo/cruzz-style.png"
+  },
+  {
+    "id": "cruzz",
+    "name": "cruzz",
+    "src": "assets/images/logo/cruzz.png"
+  },
+  {
+    "id": "cybersigilism-cross",
+    "name": "cybersigilism cross",
+    "src": "assets/images/logo/cybersigilism-cross.png"
+  },
+  {
+    "id": "double-cross",
+    "name": "Double cross",
+    "src": "assets/images/logo/Double-cross.png"
+  },
+  {
+    "id": "eclispe",
+    "name": "Eclispe",
+    "src": "assets/images/logo/Eclispe.png"
+  },
+  {
+    "id": "flower-2",
+    "name": "flower 2",
+    "src": "assets/images/logo/flower-2.png"
+  },
+  {
+    "id": "flower-metal",
+    "name": "flower metal",
+    "src": "assets/images/logo/flower-metal.png"
+  },
+  {
+    "id": "free-template",
+    "name": "Free Template",
+    "src": "assets/images/logo/Free-Template.png"
+  },
+  {
+    "id": "g-chvcvcjb",
+    "name": "g chvcvcjb",
+    "src": "assets/images/logo/g-chvcvcjb.png"
+  },
+  {
+    "id": "gangster-boy",
+    "name": "gangster boy",
+    "src": "assets/images/logo/gangster-boy.png"
+  },
+  {
+    "id": "h-ng",
+    "name": "h@ng",
+    "src": "assets/images/logo/h@ng.png"
+  },
+  {
+    "id": "heaven-core",
+    "name": "Heaven core",
+    "src": "assets/images/logo/Heaven-core.png"
+  },
+  {
+    "id": "kiss-death",
+    "name": "Kiss death",
+    "src": "assets/images/logo/Kiss-death.png"
+  },
+  {
+    "id": "lace-for-life-at-5pm-i-love",
+    "name": "Lace For Life at 5pm I love",
+    "src": "assets/images/logo/Lace-For-Life-at-5pm__I-love.png"
+  },
+  {
+    "id": "lilith-symbol-logo",
+    "name": "Lilith Symbol logo",
+    "src": "assets/images/logo/Lilith-Symbol-logo.png"
+  },
+  {
+    "id": "logo-bitcoin",
+    "name": "Logo Bitcoin",
+    "src": "assets/images/logo/Logo-Bitcoin.png"
+  },
+  {
+    "id": "logo-diamonds",
+    "name": "Logo Diamonds",
+    "src": "assets/images/logo/Logo-Diamonds.png"
+  },
+  {
+    "id": "logo-emperor",
+    "name": "logo Emperor",
+    "src": "assets/images/logo/logo-Emperor.png"
+  },
+  {
+    "id": "logo-glock",
+    "name": "Logo Glock",
+    "src": "assets/images/logo/Logo-Glock.png"
+  },
+  {
+    "id": "logo-hns-archictect-logo",
+    "name": "Logo Hns archictect Logo",
+    "src": "assets/images/logo/Logo-Hns-archictect-Logo.png"
+  },
+  {
+    "id": "logo-king",
+    "name": "Logo King",
+    "src": "assets/images/logo/Logo-King.png"
+  },
+  {
+    "id": "logo-spiderman",
+    "name": "Logo Spiderman",
+    "src": "assets/images/logo/Logo-Spiderman.png"
+  },
+  {
+    "id": "luma-cross-white",
+    "name": "luma cross white",
+    "src": "assets/images/logo/luma_cross_white.png"
+  },
+  {
+    "id": "luma-crucifixo",
+    "name": "luma crucifixo",
+    "src": "assets/images/logo/luma_crucifixo.png"
+  },
+  {
+    "id": "luma-goth-cross",
+    "name": "luma Goth cross",
+    "src": "assets/images/logo/luma_Goth_cross.png"
+  },
+  {
+    "id": "luma-mirrors",
+    "name": "luma mirrors",
+    "src": "assets/images/logo/luma_mirrors.png"
+  },
+  {
+    "id": "luma-txt",
+    "name": "luma txt",
+    "src": "assets/images/logo/luma_txt.png"
+  },
+  {
+    "id": "pray",
+    "name": "Pray",
+    "src": "assets/images/logo/Pray.png"
+  },
+  {
+    "id": "rack",
+    "name": "rack",
+    "src": "assets/images/logo/rack.png"
+  },
+  {
+    "id": "raveononscriots",
+    "name": "RaveonOnScriots",
+    "src": "assets/images/logo/RaveonOnScriots.png"
+  },
+  {
+    "id": "santana",
+    "name": "Santana",
+    "src": "assets/images/logo/Santana.png"
+  },
+  {
+    "id": "savage",
+    "name": "savage",
+    "src": "assets/images/logo/savage.png"
+  },
+  {
+    "id": "scros-738-jw",
+    "name": "scros@738 jw",
+    "src": "assets/images/logo/scros@738-jw.png"
+  },
+  {
+    "id": "sob-suas-asas",
+    "name": "Sob Suas Asas",
+    "src": "assets/images/logo/Sob-Suas-Asas.png"
+  },
+  {
+    "id": "spider",
+    "name": "Spider",
+    "src": "assets/images/logo/Spider.png"
+  },
+  {
+    "id": "spire-cross",
+    "name": "spire cross",
+    "src": "assets/images/logo/spire-cross.png"
+  },
+  {
+    "id": "sttf-ttattu",
+    "name": "sttf ttattu",
+    "src": "assets/images/logo/sttf_ttattu.png"
+  },
+  {
+    "id": "tatto-word-background",
+    "name": "Tatto word background",
+    "src": "assets/images/logo/Tatto-word-background.png"
+  },
+  {
+    "id": "tatu",
+    "name": "tatu",
+    "src": "assets/images/logo/tatu.png"
+  },
+  {
+    "id": "templates-1",
+    "name": "templates 1",
+    "src": "assets/images/logo/templates-1.png"
+  },
+  {
+    "id": "templates-2",
+    "name": "Templates 2",
+    "src": "assets/images/logo/Templates-2.png"
+  },
+  {
+    "id": "texte",
+    "name": "Texte",
+    "src": "assets/images/logo/Texte.png"
+  },
+  {
+    "id": "triple-cruzz",
+    "name": "triple cruzz",
+    "src": "assets/images/logo/triple-cruzz.png"
+  },
+  {
+    "id": "ttf-cross",
+    "name": "ttf cross",
+    "src": "assets/images/logo/ttf_cross.png"
+  },
+  {
+    "id": "txttt-bio",
+    "name": "txttt bio",
+    "src": "assets/images/logo/txttt_bio.png"
+  },
+  {
+    "id": "txttt",
+    "name": "txttt",
+    "src": "assets/images/logo/txttt.png"
+  },
+  {
+    "id": "underline",
+    "name": "underline",
+    "src": "assets/images/logo/underline.png"
+  },
+  {
+    "id": "w-wj-j-s-c-hhncwjww-msj-njw",
+    "name": "w wj j s c hhncwjww msj njw",
+    "src": "assets/images/logo/w-wj-j-s-c-hhncwjww-msj-njw.png"
+  },
+  {
+    "id": "wife-tff",
+    "name": "wife tff",
+    "src": "assets/images/logo/wife_tff.png"
+  },
+  {
+    "id": "xmdjs",
+    "name": "xmdjs",
+    "src": "assets/images/logo/xmdjs.png"
+  },
+  {
+    "id": "y2k-cirucular-design",
+    "name": "Y2K Cirucular Design",
+    "src": "assets/images/logo/Y2K-Cirucular-Design.png"
+  },
+  {
+    "id": "you",
+    "name": "you",
+    "src": "assets/images/logo/you.png"
+  }
+]

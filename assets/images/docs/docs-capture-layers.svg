@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">Aperçu de la composition par calques dans Luma Studio</title>
+  <desc id="desc">Affiche composée de textes et d’un emblème, avec commandes de calques et réglages typographiques.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#171a1d"/><stop offset="1" stop-color="#0b0d0f"/></linearGradient>
+    <linearGradient id="poster" x2=".8" y2="1"><stop stop-color="#383b3e"/><stop offset=".5" stop-color="#191c20"/><stop offset="1" stop-color="#090b0e"/></linearGradient>
+    <linearGradient id="silver" x2="1" y2="1"><stop stop-color="#f0f2f4"/><stop offset=".35" stop-color="#89929c"/><stop offset=".6" stop-color="#e3e6e9"/><stop offset="1" stop-color="#737c87"/></linearGradient>
+  </defs>
+  <rect width="1440" height="820" rx="28" fill="#090b0d"/><rect x="14" y="14" width="1412" height="792" rx="20" fill="url(#bg)" stroke="#30363b"/>
+  <rect x="14" y="14" width="1412" height="72" rx="20" fill="#111416"/><path d="M14 86h1412" stroke="#2d3338"/>
+  <rect x="34" y="31" width="38" height="38" rx="11" fill="#d9bd83"/><text x="47" y="57" fill="#17130e" font-family="Arial,sans-serif" font-size="22" font-weight="700">L</text>
+  <text x="86" y="48" fill="#f4f0e7" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="4">LUMA</text><text x="87" y="64" fill="#92999e" font-family="Arial,sans-serif" font-size="9" letter-spacing="3">STUDIO</text>
+  <text x="408" y="54" fill="#e3ddd1" font-family="Arial,sans-serif" font-size="14">Affiche — Nuit d’argent</text><text x="782" y="54" fill="#91a895" font-family="Arial,sans-serif" font-size="12">● Toutes les modifications enregistrées</text>
+  <rect x="1245" y="29" width="145" height="40" rx="10" fill="#d9bd83"/><text x="1285" y="54" fill="#17130e" font-family="Arial,sans-serif" font-size="13" font-weight="700">Exporter</text>
+  <rect x="28" y="102" width="266" height="675" rx="14" fill="#101315" stroke="#2b3035"/>
+  <text x="51" y="139" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">CALQUES</text>
+  <rect x="48" y="157" width="226" height="47" rx="8" fill="#1a1d20" stroke="#8c764d"/>
+  <rect x="57" y="167" width="27" height="27" rx="6" fill="#292d31"/><text x="66" y="186" fill="#e0ca99" font-family="Arial,sans-serif" font-size="14">T</text><text x="95" y="186" fill="#ece8df" font-family="Arial,sans-serif" font-size="12">NOCTURNE</text>
+  <rect x="48" y="212" width="226" height="47" rx="8" fill="#0d1012" stroke="#30363b"/>
+  <rect x="57" y="222" width="27" height="27" rx="6" fill="#292d31"/><text x="64" y="241" fill="url(#silver)" font-family="Arial,sans-serif" font-size="15">◈</text><text x="95" y="241" fill="#b8c0c8" font-family="Arial,sans-serif" font-size="12">Croix argentée</text>
+  <rect x="48" y="267" width="226" height="47" rx="8" fill="#0d1012" stroke="#30363b"/>
+  <rect x="57" y="277" width="27" height="27" rx="6" fill="#292d31"/><text x="64" y="296" fill="#d6d9df" font-family="Arial,sans-serif" font-size="15">◉</text><text x="95" y="296" fill="#b8c0c8" font-family="Arial,sans-serif" font-size="12">Photographie</text>
+  <rect x="48" y="326" width="105" height="36" rx="7" fill="#191c1f" stroke="#373d42"/><text x="69" y="349" fill="#c2c8cc" font-family="Arial,sans-serif" font-size="11">＋ Texte</text>
+  <rect x="164" y="326" width="110" height="36" rx="7" fill="#191c1f" stroke="#373d42"/><text x="183" y="349" fill="#c2c8cc" font-family="Arial,sans-serif" font-size="11">＋ Logo</text>
+  <path d="M48 382h226" stroke="#2b3035"/>
+  <text x="51" y="416" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">BIBLIOTHÈQUE</text>
+  <g fill="#15191c" stroke="#353c42"><rect x="49" y="433" width="65" height="70" rx="8"/><rect x="128" y="433" width="65" height="70" rx="8"/><rect x="207" y="433" width="65" height="70" rx="8"/><rect x="49" y="514" width="65" height="70" rx="8"/><rect x="128" y="514" width="65" height="70" rx="8"/><rect x="207" y="514" width="65" height="70" rx="8"/></g>
+  <g fill="none" stroke="url(#silver)" stroke-width="2"><path d="M73 448h16v14h14v14H89v17H73v-17H59v-14h14z"/><circle cx="160" cy="468" r="20"/><path d="m230 451 18 17-18 17-18-17z"/><path d="M80 525h13v14h13v13H93v18H80v-18H67v-13h13z"/><path d="m159 526 6 17 17 6-17 6-6 17-6-17-17-6 17-6z"/><circle cx="239" cy="549" r="17"/></g>
+  <g font-family="Arial,sans-serif" font-size="9" fill="#99a2a9" text-anchor="middle"><text x="81" y="495">Croix</text><text x="160" y="495">Halo</text><text x="239" y="495">Sigil</text><text x="81" y="576">Gothique</text><text x="160" y="576">Chrome</text><text x="239" y="576">Éclipse</text></g>
+  <rect x="311" y="102" width="790" height="675" rx="14" fill="#101315" stroke="#2b3035"/>
+  <rect x="331" y="120" width="750" height="46" rx="9" fill="#0b0e10" stroke="#252b30"/>
+  <text x="352" y="148" fill="#d9c795" font-family="Arial,sans-serif" font-size="12">↖ Sélection</text><text x="489" y="148" fill="#a7afb5" font-family="Arial,sans-serif" font-size="12">✎ Dessiner</text><text x="614" y="148" fill="#a7afb5" font-family="Arial,sans-serif" font-size="12">⌫ Gomme</text><text x="741" y="148" fill="#a7afb5" font-family="Arial,sans-serif" font-size="12">▣ Recadrer</text><text x="908" y="148" fill="#a7afb5" font-family="Arial,sans-serif" font-size="12">Zoom 100%</text>
+  <rect x="331" y="181" width="750" height="570" rx="10" fill="#191d20"/>
+  <rect x="520" y="202" width="370" height="528" rx="4" fill="url(#poster)" stroke="#2f3338"/>
+  <rect x="532" y="214" width="346" height="504" fill="none" stroke="#afb5bd" opacity=".6"/>
+  <circle cx="705" cy="424" r="106" fill="none" stroke="#b8c0c8" stroke-width="1.4" opacity=".75"/>
+  <circle cx="705" cy="424" r="83" fill="none" stroke="#858d98" stroke-width=".8" opacity=".66"/>
+  <path d="M705 296v256M577 424h256M615 334l180 180M795 334 615 514" stroke="url(#silver)" stroke-width="1.1" opacity=".56"/>
+  <path d="M705 345h14v65h65v14h-65v65h-14v-65h-65v-14h65z" fill="none" stroke="url(#silver)" stroke-width="2.5"/>
+  <path d="M705 345v158M626 417h158" fill="none" stroke="#f0f2f5" stroke-width=".7" opacity=".55"/>
+  <text x="705" y="596" text-anchor="middle" fill="#e5e3df" font-family="Georgia,serif" font-size="46" letter-spacing="8">NOCTURNE</text>
+  <path d="M614 613h182" stroke="#bfc5cd" opacity=".7"/>
+  <text x="705" y="640" text-anchor="middle" fill="#aeb5bb" font-family="Arial,sans-serif" font-size="11" letter-spacing="4">LUMIÈRE DANS L’OMBRE</text>
+  <rect x="579" y="276" width="252" height="300" fill="none" stroke="#d4bd85" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <g fill="#f4dfae" stroke="#111" stroke-width="2"><circle cx="579" cy="276" r="5"/><circle cx="831" cy="276" r="5"/><circle cx="579" cy="576" r="5"/><circle cx="831" cy="576" r="5"/></g>
+  <rect x="1120" y="102" width="292" height="675" rx="14" fill="#101315" stroke="#2b3035"/>
+  <text x="1145" y="139" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">TEXTE DU CALQUE</text>
+  <rect x="1144" y="157" width="244" height="42" rx="7" fill="#0b0e10" stroke="#343a3f"/><text x="1160" y="183" fill="#c6cbd0" font-family="Arial,sans-serif" font-size="12">NOCTURNE</text>
+  <text x="1145" y="230" fill="#969fa5" font-family="Arial,sans-serif" font-size="11">Police</text><rect x="1144" y="241" width="244" height="40" rx="7" fill="#0b0e10" stroke="#343a3f"/><text x="1160" y="266" fill="#d2d5d8" font-family="Georgia,serif" font-size="13">Cormorant Garamond</text>
+  <text x="1145" y="312" fill="#969fa5" font-family="Arial,sans-serif" font-size="11">Couleur du texte</text><rect x="1144" y="323" width="244" height="38" rx="7" fill="#0b0e10" stroke="#343a3f"/><rect x="1156" y="331" width="31" height="22" rx="5" fill="#e8dfcd"/><text x="1200" y="348" fill="#c2c8cc" font-family="Arial,sans-serif" font-size="11">#E8DFCD</text>
+  <text x="1145" y="393" fill="#969fa5" font-family="Arial,sans-serif" font-size="11">Contour du texte</text><path d="M1146 414h240" stroke="#333a3f" stroke-width="5" stroke-linecap="round"/><path d="M1146 414h94" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="1240" cy="414" r="7" fill="#e4d5b5"/>
+  <text x="1145" y="459" fill="#969fa5" font-family="Arial,sans-serif" font-size="11">Taille du texte</text><path d="M1146 480h240" stroke="#333a3f" stroke-width="5" stroke-linecap="round"/><path d="M1146 480h158" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="1304" cy="480" r="7" fill="#e4d5b5"/>
+  <rect x="1146" y="500" width="15" height="15" rx="3" fill="#cdb57f" stroke="#e3d0a7"/><path d="m1150 507 3 3 5-6" fill="none" stroke="#17130e" stroke-width="1.5"/><text x="1171" y="512" fill="#d4d0c8" font-family="Arial,sans-serif" font-size="11">Souligner le texte</text>
+  <text x="1145" y="549" fill="#969fa5" font-family="Arial,sans-serif" font-size="11">Rotation</text><rect x="1144" y="562" width="244" height="39" rx="7" fill="#0b0e10" stroke="#343a3f"/><text x="1160" y="587" fill="#c2c8cc" font-family="Arial,sans-serif" font-size="12">−15°</text><text x="1266" y="587" fill="#d5bd8e" font-family="Arial,sans-serif" font-size="12">0°</text><text x="1341" y="587" fill="#c2c8cc" font-family="Arial,sans-serif" font-size="12">+15°</text>
+  <text x="1145" y="632" fill="#969fa5" font-family="Arial,sans-serif" font-size="11">Ombre</text><path d="M1146 653h240" stroke="#333a3f" stroke-width="5" stroke-linecap="round"/><path d="M1146 653h73" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="1219" cy="653" r="7" fill="#e4d5b5"/>
+  <rect x="1144" y="693" width="244" height="39" rx="7" fill="#171b1e" stroke="#343a3f"/><text x="1212" y="718" fill="#c2c8cc" font-family="Arial,sans-serif" font-size="11">Centrer le calque</text>
+</svg>

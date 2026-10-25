@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">Aperçu de l’enregistrement et de l’export dans Luma Studio</title>
+  <desc id="desc">Barre d’actions de Luma Studio avec les commandes ouvrir, enregistrer et exporter, ainsi qu’un panneau de formats de sortie.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#171a1d"/><stop offset="1" stop-color="#0b0d0f"/></linearGradient>
+    <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#f1dba8"/><stop offset="1" stop-color="#ad8752"/></linearGradient>
+    <linearGradient id="art" x2=".8" y2="1"><stop stop-color="#7c7263"/><stop offset=".55" stop-color="#30373a"/><stop offset="1" stop-color="#101416"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity=".44"/></filter>
+  </defs>
+  <rect width="1440" height="820" rx="28" fill="#090b0d"/><rect x="14" y="14" width="1412" height="792" rx="20" fill="url(#bg)" stroke="#30363b"/>
+  <rect x="14" y="14" width="1412" height="72" rx="20" fill="#111416"/><path d="M14 86h1412" stroke="#2d3338"/>
+  <rect x="34" y="31" width="38" height="38" rx="11" fill="url(#gold)"/><text x="47" y="57" fill="#17130e" font-family="Arial,sans-serif" font-size="22" font-weight="700">L</text>
+  <text x="86" y="48" fill="#f4f0e7" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="4">LUMA</text><text x="87" y="64" fill="#92999e" font-family="Arial,sans-serif" font-size="9" letter-spacing="3">STUDIO</text>
+  <rect x="337" y="29" width="255" height="42" rx="21" fill="#0b0e10" stroke="#343a3f"/><text x="358" y="55" fill="#e3ddd1" font-family="Arial,sans-serif" font-size="13">Projet : Affiche nocturne</text>
+  <text x="622" y="54" fill="#91a895" font-family="Arial,sans-serif" font-size="12">● Sauvegarde locale active</text>
+  <rect x="898" y="28" width="108" height="44" rx="9" fill="#191c1f" stroke="#373d42"/><text x="923" y="55" fill="#c5cbd0" font-family="Arial,sans-serif" font-size="12">Ouvrir projet</text>
+  <rect x="1018" y="28" width="119" height="44" rx="9" fill="#191c1f" stroke="#373d42"/><text x="1047" y="55" fill="#c5cbd0" font-family="Arial,sans-serif" font-size="12">Enregistrer</text>
+  <rect x="1149" y="27" width="241" height="46" rx="10" fill="url(#gold)"/><text x="1217" y="56" fill="#17130e" font-family="Arial,sans-serif" font-size="14" font-weight="700">Exporter l’image</text>
+  <rect x="34" y="108" width="814" height="665" rx="14" fill="#101315" stroke="#2b3035"/>
+  <rect x="55" y="129" width="772" height="46" rx="9" fill="#0b0e10" stroke="#252b30"/>
+  <text x="77" y="157" fill="#b7bec3" font-family="Arial,sans-serif" font-size="12">Affiche nocturne</text><text x="700" y="157" fill="#d5bd8e" font-family="Arial,sans-serif" font-size="12">1080 × 1350 px</text>
+  <rect x="55" y="192" width="772" height="560" rx="10" fill="#191d20"/>
+  <g filter="url(#shadow)">
+    <rect x="296" y="213" width="290" height="518" rx="4" fill="#0e1114"/>
+    <rect x="306" y="223" width="270" height="498" fill="url(#art)"/>
+    <circle cx="442" cy="377" r="85" fill="#d5b884" opacity=".25"/>
+    <path d="M306 541 379 440l68 66 55-86 74 93v208H306z" fill="#1a2528"/>
+    <path d="M306 603 400 500l55 55 54-40 67 75v131H306z" fill="#111719"/>
+    <text x="326" y="637" fill="#eee5d4" font-family="Georgia,serif" font-size="32" letter-spacing="2">L’ESSENTIEL</text><path d="M328 651h162" stroke="#c9ad70"/><text x="328" y="672" fill="#d0c9bb" font-family="Arial,sans-serif" font-size="9" letter-spacing="3">CRÉER SANS LIMITE</text>
+  </g>
+  <rect x="878" y="108" width="534" height="665" rx="14" fill="#101315" stroke="#2b3035"/>
+  <text x="911" y="151" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">ENREGISTRER VOTRE TRAVAIL</text>
+  <text x="911" y="181" fill="#9ca5ab" font-family="Arial,sans-serif" font-size="12">Deux formats selon la suite que vous souhaitez donner à votre création.</text>
+  <rect x="910" y="205" width="468" height="174" rx="12" fill="#14181a" stroke="#73603d"/>
+  <rect x="932" y="229" width="48" height="48" rx="12" fill="#27231c" stroke="#776542"/><text x="943" y="260" fill="#e0ca99" font-family="Arial,sans-serif" font-size="15" font-weight="700">.L</text>
+  <text x="997" y="244" fill="#ece6da" font-family="Arial,sans-serif" font-size="15" font-weight="700">Projet modifiable</text>
+  <text x="997" y="268" fill="#a5adb2" font-family="Arial,sans-serif" font-size="11">Calques, textes et réglages conservés</text>
+  <text x="997" y="289" fill="#a5adb2" font-family="Arial,sans-serif" font-size="11">pour pouvoir reprendre votre travail.</text>
+  <rect x="932" y="316" width="194" height="40" rx="8" fill="#1b1f22" stroke="#41474c"/><text x="970" y="341" fill="#d1c8b6" font-family="Arial,sans-serif" font-size="11">Enregistrer en .json</text>
+  <rect x="910" y="397" width="468" height="306" rx="12" fill="#14181a" stroke="#343a3f"/>
+  <rect x="932" y="422" width="48" height="48" rx="12" fill="#20262a" stroke="#48515a"/><text x="942" y="452" fill="#d7dde2" font-family="Arial,sans-serif" font-size="14" font-weight="700">IMG</text>
+  <text x="997" y="437" fill="#ece6da" font-family="Arial,sans-serif" font-size="15" font-weight="700">Image finale</text>
+  <text x="997" y="460" fill="#a5adb2" font-family="Arial,sans-serif" font-size="11">Prête à partager ou publier.</text>
+  <text x="932" y="506" fill="#a5adb2" font-family="Arial,sans-serif" font-size="11">FORMAT D’EXPORT</text>
+  <rect x="932" y="520" width="136" height="42" rx="8" fill="#1b1f22" stroke="#9b8051"/><text x="984" y="547" fill="#e0ca99" font-family="Arial,sans-serif" font-size="13" font-weight="700">PNG</text>
+  <rect x="1078" y="520" width="136" height="42" rx="8" fill="#101315" stroke="#3b4247"/><text x="1130" y="547" fill="#b8c0c5" font-family="Arial,sans-serif" font-size="13">JPG</text>
+  <rect x="1224" y="520" width="136" height="42" rx="8" fill="#101315" stroke="#3b4247"/><text x="1274" y="547" fill="#b8c0c5" font-family="Arial,sans-serif" font-size="13">WebP</text>
+  <rect x="932" y="584" width="428" height="1" fill="#30363b"/>
+  <text x="932" y="615" fill="#a5adb2" font-family="Arial,sans-serif" font-size="11">Le PNG prend en charge la transparence.</text>
+  <rect x="932" y="640" width="428" height="42" rx="8" fill="url(#gold)"/><text x="1078" y="666" fill="#17130e" font-family="Arial,sans-serif" font-size="13" font-weight="700">Exporter l’image</text>
+  <rect x="70" y="710" width="230" height="28" rx="14" fill="#101315" stroke="#30363b"/><circle cx="88" cy="724" r="4" fill="#91a895"/><text x="100" y="728" fill="#aab2b8" font-family="Arial,sans-serif" font-size="10">La sauvegarde locale est active</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">Aperçu des outils de retouche de Luma Studio</title>
+  <desc id="desc">Interface de retouche affichant les réglages d’image, les outils de recadrage et un aperçu artistique.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#171a1d"/><stop offset="1" stop-color="#0b0d0f"/></linearGradient>
+    <linearGradient id="photo" x2=".8" y2="1"><stop stop-color="#819197"/><stop offset=".48" stop-color="#374950"/><stop offset="1" stop-color="#121a1b"/></linearGradient>
+    <linearGradient id="sun" x2="0" y2="1"><stop stop-color="#e0c18b" stop-opacity=".72"/><stop offset="1" stop-color="#e0c18b" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1440" height="820" rx="28" fill="#090b0d"/><rect x="14" y="14" width="1412" height="792" rx="20" fill="url(#bg)" stroke="#30363b"/>
+  <rect x="14" y="14" width="1412" height="72" rx="20" fill="#111416"/><path d="M14 86h1412" stroke="#2d3338"/>
+  <rect x="34" y="31" width="38" height="38" rx="11" fill="#d9bd83"/><text x="47" y="57" fill="#17130e" font-family="Arial,sans-serif" font-size="22" font-weight="700">L</text>
+  <text x="86" y="48" fill="#f4f0e7" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="4">LUMA</text><text x="87" y="64" fill="#92999e" font-family="Arial,sans-serif" font-size="9" letter-spacing="3">STUDIO</text>
+  <text x="358" y="54" fill="#e3ddd1" font-family="Arial,sans-serif" font-size="14">Photo de montagne.webp</text><text x="722" y="54" fill="#d3bd8d" font-family="Arial,sans-serif" font-size="13">2400 × 1600 px</text>
+  <rect x="1251" y="29" width="139" height="40" rx="10" fill="#d9bd83"/><text x="1290" y="54" fill="#17130e" font-family="Arial,sans-serif" font-size="13" font-weight="700">Exporter</text>
+  <rect x="28" y="102" width="263" height="675" rx="14" fill="#101315" stroke="#2b3035"/>
+  <text x="50" y="139" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">RÉGLAGES IMAGE</text>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#afb6bb">
+    <text x="50" y="179">Luminosité</text><text x="259" y="179" text-anchor="end" fill="#d5bd8e">112%</text>
+    <text x="50" y="232">Contraste</text><text x="259" y="232" text-anchor="end" fill="#d5bd8e">108%</text>
+    <text x="50" y="285">Saturation</text><text x="259" y="285" text-anchor="end" fill="#d5bd8e">86%</text>
+    <text x="50" y="338">Température</text><text x="259" y="338" text-anchor="end" fill="#d5bd8e">+12</text>
+    <text x="50" y="391">Flou</text><text x="259" y="391" text-anchor="end" fill="#d5bd8e">0</text>
+  </g>
+  <g stroke="#333a3f" stroke-width="5" stroke-linecap="round"><path d="M51 195h208M51 248h208M51 301h208M51 354h208M51 407h208"/></g>
+  <g stroke="#c6a76c" stroke-width="5" stroke-linecap="round"><path d="M51 195h122M51 248h132M51 301h91M149 354h110"/></g>
+  <g fill="#e4d5b5" stroke="#151719" stroke-width="3"><circle cx="173" cy="195" r="7"/><circle cx="183" cy="248" r="7"/><circle cx="142" cy="301" r="7"/><circle cx="149" cy="354" r="7"/><circle cx="51" cy="407" r="7"/></g>
+  <path d="M48 442h220" stroke="#2b3035"/>
+  <text x="50" y="477" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">SUPPRESSION DU FOND</text>
+  <rect x="49" y="496" width="98" height="36" rx="7" fill="#171b1e" stroke="#73603d"/><text x="68" y="519" fill="#dfca9a" font-family="Arial,sans-serif" font-size="11">⌖ Pipette</text>
+  <rect x="155" y="496" width="112" height="36" rx="7" fill="#171b1e" stroke="#343a3f"/><text x="169" y="519" fill="#b6bdc1" font-family="Arial,sans-serif" font-size="10">Retirer fond</text>
+  <text x="50" y="569" fill="#9ca5ab" font-family="Arial,sans-serif" font-size="11">Sensibilité</text><path d="M51 588h207" stroke="#333a3f" stroke-width="5" stroke-linecap="round"/><path d="M51 588h95" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="146" cy="588" r="7" fill="#e4d5b5"/>
+  <text x="50" y="629" fill="#9ca5ab" font-family="Arial,sans-serif" font-size="11">Adoucissement des bords</text><path d="M51 648h207" stroke="#333a3f" stroke-width="5" stroke-linecap="round"/><path d="M51 648h124" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="175" cy="648" r="7" fill="#e4d5b5"/>
+  <rect x="308" y="102" width="821" height="675" rx="14" fill="#101315" stroke="#2b3035"/>
+  <rect x="327" y="120" width="783" height="52" rx="9" fill="#0b0e10" stroke="#252b30"/>
+  <g font-family="Arial,sans-serif" font-size="12"><rect x="340" y="131" width="102" height="30" rx="6" fill="#1d2023" stroke="#74613e"/><text x="355" y="151" fill="#e1ca97">▣ Recadrer</text><text x="459" y="151" fill="#a7afb5">↻ Tourner</text><text x="568" y="151" fill="#a7afb5">⇋ Miroir</text><text x="679" y="151" fill="#a7afb5">✎ Dessiner</text><text x="797" y="151" fill="#d9a7a0">⌫ Gomme</text></g>
+  <rect x="327" y="187" width="783" height="563" rx="10" fill="#171b1e"/>
+  <rect x="362" y="211" width="713" height="515" rx="4" fill="url(#photo)"/>
+  <circle cx="828" cy="343" r="120" fill="url(#sun)" opacity=".7"/>
+  <path d="M362 560 484 410l101 109 116-181 137 200 92-112 145 169v131H362z" fill="#303e40"/>
+  <path d="m701 519 94-181 96 200-75-47-28 31-44-37-43 34z" fill="#ced1c4" opacity=".74"/>
+  <path d="m484 410 39 42-29-7-21 23-18-9zM891 426l48 63-28-13-21 16-31-35z" fill="#d9d9cb" opacity=".5"/>
+  <path d="M362 620q170-46 320 0t393-4v110H362z" fill="#1b292a" opacity=".88"/>
+  <rect x="387" y="238" width="664" height="461" rx="2" fill="none" stroke="#ead9af" stroke-width="2" stroke-dasharray="9 7"/>
+  <g stroke="#ead9af" opacity=".48"><path d="M608 238v461M830 238v461M387 391h664M387 545h664"/></g>
+  <circle cx="387" cy="238" r="5" fill="#f5e5c2"/><circle cx="1051" cy="238" r="5" fill="#f5e5c2"/><circle cx="387" cy="699" r="5" fill="#f5e5c2"/><circle cx="1051" cy="699" r="5" fill="#f5e5c2"/>
+  <rect x="1150" y="102" width="262" height="675" rx="14" fill="#101315" stroke="#2b3035"/>
+  <text x="1174" y="139" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">LOOKS</text>
+  <g font-family="Arial,sans-serif" font-size="11" text-anchor="middle">
+    <rect x="1173" y="157" width="102" height="66" rx="8" fill="#1a1e21" stroke="#786340"/><text x="1224" y="197" fill="#e0ca99">Original</text>
+    <rect x="1285" y="157" width="102" height="66" rx="8" fill="#202024" stroke="#343a3f"/><text x="1336" y="197" fill="#c4c5c8">Noir</text>
+    <rect x="1173" y="232" width="102" height="66" rx="8" fill="#232523" stroke="#343a3f"/><text x="1224" y="272" fill="#c4c5c8">Doux</text>
+    <rect x="1285" y="232" width="102" height="66" rx="8" fill="#25211b" stroke="#343a3f"/><text x="1336" y="272" fill="#c4c5c8">Lumière</text>
+  </g>
+  <path d="M1173 322h214" stroke="#2b3035"/>
+  <text x="1174" y="355" fill="#e5d5b6" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">FINITION</text>
+  <g><rect x="1173" y="372" width="63" height="53" rx="7" fill="#171b1e" stroke="#373d42"/><rect x="1248" y="372" width="63" height="53" rx="7" fill="#171b1e" stroke="#373d42"/><rect x="1323" y="372" width="63" height="53" rx="7" fill="#171b1e" stroke="#373d42"/><rect x="1181" y="380" width="47" height="37" fill="none" stroke="#d1b675"/><rect x="1256" y="380" width="47" height="37" fill="none" stroke="#d4d9e1"/><rect x="1331" y="380" width="47" height="37" fill="none" stroke="#73e2eb"/></g>
+  <text x="1174" y="471" fill="#9ca5ab" font-family="Arial,sans-serif" font-size="11">Vignette</text><path d="M1175 491h211" stroke="#343a3f" stroke-width="5" stroke-linecap="round"/><path d="M1175 491h89" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="1264" cy="491" r="7" fill="#e4d5b5"/>
+  <text x="1174" y="539" fill="#9ca5ab" font-family="Arial,sans-serif" font-size="11">Lueur</text><path d="M1175 559h211" stroke="#343a3f" stroke-width="5" stroke-linecap="round"/><path d="M1175 559h54" stroke="#c6a76c" stroke-width="5" stroke-linecap="round"/><circle cx="1229" cy="559" r="7" fill="#e4d5b5"/>
+  <rect x="1173" y="617" width="213" height="40" rx="8" fill="#171b1e" stroke="#343a3f"/><text x="1224" y="642" fill="#b6bdc1" font-family="Arial,sans-serif" font-size="11">Réinitialiser les réglages</text>
+</svg>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090909" />
+    <title>Luma Studio | Éditeur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Archivo:wght@400;500;700&family=Audiowide&family=Bebas+Neue&family=Cinzel:wght@400;500;700&family=Crimson+Text:wght@400;600;700&family=Courier+Prime:wght@400;700&family=Cormorant+Garamond:wght@400;500;700&family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Fira+Code:wght@400;500;700&family=Germania+One&family=Grenze+Gotisch:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Kanit:wght@400;500;700&family=Lato:wght@400;700&family=League+Spartan:wght@400;500;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;700&family=Manrope:wght@400;500;700&family=Metal+Mania&family=Michroma&family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&family=Montserrat+Alternates:wght@400;500;700&family=Monsieur+La+Doulaise&family=New+Rocker&family=Nunito:wght@400;500;700&family=Open+Sans:wght@400;500;700&family=Orbitron:wght@400;500;700&family=Oswald:wght@400;500;700&family=Outfit:wght@400;500;700&family=Oxanium:wght@400;500;700&family=Pirata+One&family=Playfair+Display:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&family=Quicksand:wght@400;500;700&family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&family=Share+Tech+Mono&family=Sora:wght@400;500;700&family=Source+Sans+3:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Ubuntu+Mono:wght@400;700&family=UnifrakturMaguntia&family=Urbanist:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Eater&family=Jacquard+12&family=MedievalSharp&family=Rakkas&family=Rye&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script>if (new URLSearchParams(window.location.search).get("preview") === "1") document.documentElement.classList.add("studio-preview-document");</script>
+    <script src="assets/js/editor.js" defer></script>
+  </head>
+  <body class="studio-page">
+    <div class="editor-shell">
+      <header class="editor-topbar">
+        <a class="brand-wrap" href="index.html" aria-label="Retour à l'accueil Luma Studio">
+          <div class="brand-mark"><span>L</span></div>
+          <div class="brand-copy">
+            <strong>LUMA</strong>
+            <small>STUDIO</small>
+          </div>
+        </a>
+
+        <div class="workspace-meta">
+          <span class="meta-pill">Projet</span>
+          <input class="project-name" id="project-name" type="text" value="Sans titre" aria-label="Nom du projet" />
+          <span class="autosave-state" id="autosave-state" aria-live="polite">Sauvegarde locale active</span>
+        </div>
+
+        <div class="topbar-actions">
+          <a class="btn btn-ghost studio-docs-link" href="gallery.html">Galerie</a>
+          <a class="btn btn-ghost studio-docs-link" href="docs.html">Aide & documentation</a>
+          <button class="btn btn-ghost editor-theme-toggle" id="editor-theme-toggle" type="button" aria-pressed="false" title="Passer au mode clair">☼ Mode clair</button>
+          <button class="btn btn-ghost" id="undo-button" type="button" disabled>Annuler</button>
+          <button class="btn btn-ghost" id="redo-button" type="button" disabled>Rétablir</button>
+          <button class="btn btn-ghost" id="reset-button" type="button">Réinitialiser</button>
+          <button class="btn btn-ghost" id="close-project-button" type="button" disabled>Fermer le projet</button>
+          <button class="btn btn-ghost" id="open-project-button" type="button">Ouvrir projet</button>
+          <button class="btn btn-ghost" id="save-project-button" type="button" disabled>Télécharger le projet</button>
+          <input id="project-upload" type="file" accept=".json,application/json" hidden />
+          <button class="btn btn-ghost" id="save-image-button" type="button" disabled>Enregistrer l’image</button>
+          <button class="btn btn-primary" id="export-button" type="button">Exporter</button>
+        </div>
+      </header>
+
+      <main class="editor-layout">
+        <details class="sidebar left-sidebar panel-accordion" id="image-layers-panel" open>
+          <summary class="panel-accordion-header">Image & calques</summary>
+          <div class="panel-accordion-content">
+          <div class="mobile-drawer-header">
+            <span>Image & calques</span>
+            <button class="mobile-drawer-close" type="button" data-mobile-panel-close aria-label="Fermer le menu Image et calques">Fermer <span aria-hidden="true">×</span></button>
+          </div>
+          <div class="panel-block first-panel">
+            <div class="panel-title">Réglages image</div>
+            <label class="range-wrap" for="brightness">
+              <span>Luminosité</span><output data-value-for="brightness">100%</output>
+            </label>
+            <input id="brightness" data-adjust="brightness" type="range" min="0" max="200" value="100" />
+
+            <label class="range-wrap" for="contrast">
+              <span>Contraste</span><output data-value-for="contrast">100%</output>
+            </label>
+            <input id="contrast" data-adjust="contrast" type="range" min="0" max="200" value="100" />
+
+            <label class="range-wrap" for="saturation">
+              <span>Saturation</span><output data-value-for="saturation">100%</output>
+            </label>
+            <input id="saturation" data-adjust="saturation" type="range" min="0" max="200" value="100" />
+
+            <label class="range-wrap" for="warmth">
+              <span>Température</span><output data-value-for="warmth">0</output>
+            </label>
+            <input id="warmth" data-adjust="warmth" type="range" min="-100" max="100" value="0" />
+
+            <label class="range-wrap" for="softness">
+              <span>Flou</span><output data-value-for="softness">0</output>
+            </label>
+            <input id="softness" data-adjust="softness" type="range" min="0" max="12" value="0" step="0.5" />
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-title">Format</div>
+            <label class="sr-only" for="aspect-ratio">Format de l'image</label>
+            <select class="editor-select" id="aspect-ratio">
+              <optgroup label="Réseaux sociaux">
+                <option value="original">Original</option>
+                <option value="1">Carré · Instagram / avatar · 1:1</option>
+                <option value="0.8">Portrait · Instagram · 4:5</option>
+                <option value="0.5625">Story / TikTok / Reel · 9:16</option>
+                <option value="1.7778">Vidéo / miniature YouTube · 16:9</option>
+                <option value="1.91">Publication paysage · 1.91:1</option>
+                <option value="2.63">Couverture Facebook · 2.63:1</option>
+                <option value="3">Bannière X / Twitter · 3:1</option>
+                <option value="4">Bannière LinkedIn · 4:1</option>
+              </optgroup>
+              <optgroup label="Photo & impression">
+                <option value="1.3333">Photo paysage · 4:3</option>
+                <option value="1.5">Photo classique · 3:2</option>
+                <option value="0.75">Portrait · 3:4</option>
+                <option value="0.6667">Épingle / affiche · 2:3</option>
+                <option value="1.25">Photo · 5:4</option>
+                <option value="0.707">Papier A4 portrait · 1:√2</option>
+                <option value="1.414">Papier A4 paysage · √2:1</option>
+                <option value="2">Bannière large · 2:1</option>
+              </optgroup>
+            </select>
+            <label class="paper-color-control" for="paper-color">
+              <span>Couleur de la feuille</span>
+              <input id="paper-color" type="color" value="#ffffff" disabled />
+            </label>
+            <p class="panel-note paper-color-note">Disponible avec une feuille blanche ou un modèle.</p>
+            <label class="range-wrap" for="image-rotation">
+              <span>Rotation précise</span><output data-value-for="image-rotation">0°</output>
+            </label>
+            <input id="image-rotation" type="range" min="-180" max="180" value="0" disabled />
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-title">Suppression du fond</div>
+            <p class="panel-note">Fond uni : pipettez la couleur à retirer, puis affinez la sensibilité et les bords.</p>
+            <div class="layer-actions">
+              <button class="chip-button" id="pick-background" type="button" disabled>⌖ Pipette</button>
+              <button class="chip-button" id="clear-background" type="button" disabled>Effacer le détourage</button>
+            </div>
+            <label class="range-wrap" for="background-tolerance">
+              <span>Sensibilité</span><output data-value-for="background-tolerance">45</output>
+            </label>
+            <input id="background-tolerance" type="range" min="5" max="180" value="45" disabled />
+            <label class="range-wrap" for="background-feather">
+              <span>Adoucissement des bords</span><output data-value-for="background-feather">42</output>
+            </label>
+            <input id="background-feather" type="range" min="1" max="100" value="42" disabled />
+          </div>
+
+          <div class="panel-block">
+            <div class="layer-heading">
+              <div class="panel-title">Calques <span class="layer-count" id="layer-count">0</span></div>
+              <span class="layer-selection-summary" id="layer-selection-summary">Aucun calque sélectionné</span>
+            </div>
+            <div class="layer-actions">
+              <button class="chip-button" id="new-text-layer" type="button" disabled>＋ Texte</button>
+              <button class="chip-button file-button" id="logo-upload-button" type="button" disabled>＋ Logo</button>
+              <input id="logo-upload" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg" aria-label="Importer un logo" hidden />
+            </div>
+            <div class="layer-actions layer-group-actions">
+              <label class="sr-only" for="layer-group-name">Nom du groupe</label>
+              <input id="layer-group-name" type="text" value="Nouveau groupe" maxlength="40" placeholder="Nom du groupe" />
+              <button class="chip-button" id="group-layers" type="button" disabled>Grouper</button>
+              <button class="chip-button" id="ungroup-layers" type="button" disabled>Dégrouper</button>
+            </div>
+            <div class="layer-list" id="layer-list" aria-label="Calques du projet">
+              <p class="layer-empty">Aucun calque ajouté</p>
+            </div>
+            <div class="layer-actions layer-management">
+              <button class="chip-button" id="duplicate-layer" type="button" disabled>Dupliquer</button>
+              <button class="chip-button" id="move-layer-back" type="button" disabled>Arrière</button>
+              <button class="chip-button" id="move-layer-front" type="button" disabled>Avant</button>
+              <button class="chip-button danger-button" id="delete-layer" type="button" disabled>Supprimer</button>
+            </div>
+            <div class="logo-library">
+              <div class="panel-title">Emblèmes · créations originales</div>
+              <label class="sr-only" for="logo-search">Rechercher un logo</label>
+              <input class="logo-search" id="logo-search" type="search" placeholder="Rechercher parmi les logos…" autocomplete="off" />
+              <p class="logo-results" id="logo-results" aria-live="polite">40 logos disponibles</p>
+              <label class="logo-color-control" for="logo-color">
+                <span>Teinte des emblèmes</span>
+                <input id="logo-color" type="color" value="#aeb7c3" />
+              </label>
+              <div class="logo-grid" role="group" aria-label="Logos PNG disponibles">
+                <button class="logo-card" type="button" data-logo="angels" disabled><img src="assets/images/logo/angels-xx.png" alt="" loading="lazy" /><span>Angels XX</span></button>
+                <button class="logo-card" type="button" data-logo="bat" disabled><img src="assets/images/logo/bat.png" alt="" loading="lazy" /><span>Chauve-souris</span></button>
+                <button class="logo-card" type="button" data-logo="chapelet" disabled><img src="assets/images/logo/chapelet-cruzz.png" alt="" loading="lazy" /><span>Chapelet Cruzz</span></button>
+                <button class="logo-card" type="button" data-logo="chromeSkull" disabled><img src="assets/images/logo/Chrome-skull-Cross.png" alt="" loading="lazy" /><span>Crâne chrome</span></button>
+                <button class="logo-card" type="button" data-logo="ornateCross" disabled><img src="assets/images/logo/Croix-ornee.png" alt="" loading="lazy" /><span>Croix ornée</span></button>
+                <button class="logo-card" type="button" data-logo="cruzzOne" disabled><img src="assets/images/logo/cruzz-1.png" alt="" loading="lazy" /><span>Cruzz 01</span></button>
+                <button class="logo-card" type="button" data-logo="dragonCruzz" disabled><img src="assets/images/logo/cruzz-dragon.png" alt="" loading="lazy" /><span>Cruzz dragon</span></button>
+                <button class="logo-card" type="button" data-logo="cruzzStyle" disabled><img src="assets/images/logo/cruzz-style.png" alt="" loading="lazy" /><span>Cruzz style</span></button>
+                <button class="logo-card" type="button" data-logo="cruzz" disabled><img src="assets/images/logo/cruzz.png" alt="" loading="lazy" /><span>Cruzz</span></button>
+                <button class="logo-card" type="button" data-logo="cyberCross" disabled><img src="assets/images/logo/cybersigilism-cross.png" alt="" loading="lazy" /><span>Sigil cyber</span></button>
+                <button class="logo-card" type="button" data-logo="eclipse" disabled><img src="assets/images/logo/Eclispe.png" alt="" loading="lazy" /><span>Éclipse</span></button>
+                <button class="logo-card" type="button" data-logo="metalFlower" disabled><img src="assets/images/logo/flower-metal.png" alt="" loading="lazy" /><span>Fleur métal</span></button>
+                <button class="logo-card" type="button" data-logo="gangster" disabled><img src="assets/images/logo/gangster-boy.png" alt="" loading="lazy" /><span>Gangster boy</span></button>
+                <button class="logo-card" type="button" data-logo="rack" disabled><img src="assets/images/logo/rack.png" alt="" loading="lazy" /><span>Rack</span></button>
+                <button class="logo-card" type="button" data-logo="savage" disabled><img src="assets/images/logo/savage.png" alt="" loading="lazy" /><span>Savage</span></button>
+                <button class="logo-card" type="button" data-logo="spireCross" disabled><img src="assets/images/logo/spire-cross.png" alt="" loading="lazy" /><span>Croix spire</span></button>
+                <button class="logo-card" type="button" data-logo="tripleCruzz" disabled><img src="assets/images/logo/triple-cruzz.png" alt="" loading="lazy" /><span>Triple Cruzz</span></button>
+                <button class="logo-card" type="button" data-logo="you" disabled><img src="assets/images/logo/you.png" alt="" loading="lazy" /><span>You</span></button>
+                <button class="logo-card" type="button" data-logo="chromeAngels" disabled><img src="assets/images/logo/Chrome-Angels-logo.png" alt="" loading="lazy" /><span>Chrome Angels</span></button>
+                <button class="logo-card" type="button" data-logo="lilithSymbol" disabled><img src="assets/images/logo/Lilith-Symbol-logo.png" alt="" loading="lazy" /><span>Symbole Lilith</span></button>
+                <button class="logo-card" type="button" data-logo="bitcoin" disabled><img src="assets/images/logo/Logo-Bitcoin.png" alt="" loading="lazy" /><span>Bitcoin</span></button>
+                <button class="logo-card" type="button" data-logo="diamonds" disabled><img src="assets/images/logo/Logo-Diamonds.png" alt="" loading="lazy" /><span>Diamonds</span></button>
+                <button class="logo-card" type="button" data-logo="emperor" disabled><img src="assets/images/logo/logo-Emperor.png" alt="" loading="lazy" /><span>Emperor</span></button>
+                <button class="logo-card" type="button" data-logo="glock" disabled><img src="assets/images/logo/Logo-Glock.png" alt="" loading="lazy" /><span>Glock</span></button>
+                <button class="logo-card" type="button" data-logo="hnsArchitect" disabled><img src="assets/images/logo/Logo-Hns-archictect-Logo.png" alt="" loading="lazy" /><span>HNS Architect</span></button>
+                <button class="logo-card" type="button" data-logo="king" disabled><img src="assets/images/logo/Logo-King.png" alt="" loading="lazy" /><span>King</span></button>
+                <button class="logo-card" type="button" data-logo="spidermanLogo" disabled><img src="assets/images/logo/Logo-Spiderman.png" alt="" loading="lazy" /><span>Spiderman</span></button>
+                <button class="logo-card" type="button" data-logo="santana" disabled><img src="assets/images/logo/Santana.png" alt="" loading="lazy" /><span>Santana</span></button>
+                <button class="logo-card" type="button" data-logo="spider" disabled><img src="assets/images/logo/Spider.png" alt="" loading="lazy" /><span>Spider</span></button>
+                <button class="logo-card" type="button" data-logo="cross444" disabled><img src="assets/images/logo/444Crosss.png" alt="" loading="lazy" /><span>444 Cross</span></button>
+                <button class="logo-card" type="button" data-logo="crossTwo" disabled><img src="assets/images/logo/Cross-2.png" alt="" loading="lazy" /><span>Cross 02</span></button>
+                <button class="logo-card" type="button" data-logo="heavenCore" disabled><img src="assets/images/logo/Heaven-core.png" alt="" loading="lazy" /><span>Heaven Core</span></button>
+                <button class="logo-card" type="button" data-logo="pray" disabled><img src="assets/images/logo/Pray.png" alt="" loading="lazy" /><span>Pray</span></button>
+                <button class="logo-card" type="button" data-logo="sobSuasAsas" disabled><img src="assets/images/logo/Sob-Suas-Asas.png" alt="" loading="lazy" /><span>Sob Suas Asas</span></button>
+                <button class="logo-card" type="button" data-logo="texte" disabled><img src="assets/images/logo/Texte.png" alt="" loading="lazy" /><span>Texte</span></button>
+                <button class="logo-card" type="button" data-logo="xmdjs" disabled><img src="assets/images/logo/xmdjs.png" alt="" loading="lazy" /><span>XMDJS</span></button>
+                <button class="logo-card" type="button" data-logo="blackBirds" disabled><img src="assets/images/logo/BlackBirds.png" alt="" loading="lazy" /><span>Black Birds</span></button>
+                <button class="logo-card" type="button" data-logo="bxcgriynd" disabled><img src="assets/images/logo/Bxcgriynd.png" alt="" loading="lazy" /><span>Bxcgriynd</span></button>
+                <button class="logo-card" type="button" data-logo="raveonOnScriots" disabled><img src="assets/images/logo/RaveonOnScriots.png" alt="" loading="lazy" /><span>Raveon On Scriots</span></button>
+                <button class="logo-card" type="button" data-logo="wjEmblem" disabled><img src="assets/images/logo/w-wj-j-s-c-hhncwjww-msj-njw.png" alt="" loading="lazy" /><span>W-WJ-J-S-C-HHNCWJWW-MSJ-NJW</span></button>
+              </div>
+              <p class="panel-note crosses-note">Logos PNG transparents · sélectionnez une couleur pour les recolorer.</p>
+              <div class="crosses-logo-grid" id="crosses-logo-grid" role="group" aria-label="Symboles de la police Crosses"></div>
+            </div>
+          </div>
+          </div>
+        </details>
+
+        <section class="stage-panel" aria-label="Zone de travail">
+          <div class="stage-toolbar">
+            <span id="image-name">Aucune image</span>
+            <button class="chip-button stage-image-button" id="open-image-button" type="button">Importer une image</button>
+            <div class="canvas-readout">
+              <span class="toolbar-right" id="image-dimensions">—</span>
+              <label class="zoom-control" for="canvas-zoom">
+                <span>Zoom</span>
+                <input id="canvas-zoom" type="range" min="50" max="150" value="100" />
+                <output id="canvas-zoom-output">100%</output>
+              </label>
+            </div>
+          </div>
+          <nav class="mobile-editor-menus" aria-label="Menus de l’éditeur">
+            <button class="mobile-editor-menu-button" type="button" data-mobile-panel="image-layers-panel" aria-controls="image-layers-panel" aria-expanded="false">
+              <span class="hamburger-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+              Image & calques
+            </button>
+            <button class="mobile-editor-menu-button" type="button" data-mobile-panel="styles-panel" aria-controls="styles-panel" aria-expanded="false">
+              <span class="hamburger-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+              Styles
+            </button>
+          </nav>
+
+          <div class="canvas-tools" role="toolbar" aria-label="Outils de création">
+            <span class="tools-label">OUTILS</span>
+            <button class="tool-mode blank-project" id="new-blank-canvas" type="button">＋ Feuille blanche</button>
+            <button class="tool-mode active" id="select-tool" type="button" data-tool="select" aria-pressed="true">↖ Sélection</button>
+            <button class="tool-mode" id="draw-tool" type="button" data-tool="draw" aria-pressed="false" disabled>✎ Dessiner</button>
+            <button class="tool-mode eraser-tool" id="mask-tool" type="button" data-tool="mask" aria-pressed="false" disabled>⌫ Gomme</button>
+            <button class="tool-mode" id="crop-tool" type="button" data-tool="crop" aria-pressed="false" disabled>▣ Recadrer</button>
+            <label class="brush-color" for="brush-color">
+              <span class="sr-only">Couleur du pinceau</span>
+              <input id="brush-color" type="color" value="#e8d7b4" disabled />
+            </label>
+            <label class="brush-size" for="brush-size">
+              <span>Pointe</span>
+              <input id="brush-size" type="range" min="1" max="24" value="5" disabled />
+              <output id="brush-size-output">5%</output>
+            </label>
+            <button class="chip-button crop-apply" id="apply-crop" type="button" disabled hidden>Valider le cadrage</button>
+            <button class="chip-button crop-cancel" id="cancel-crop" type="button" disabled hidden>Annuler</button>
+          </div>
+          <div class="template-bar" role="group" aria-label="Modèles de création">
+            <span>MODÈLES</span>
+            <button class="template-button collage-button" id="collage-button" type="button">＋ Collage photo</button>
+            <input id="collage-upload" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden />
+            <label class="collage-layout-control" for="collage-layout">
+              <span>Mise en page</span>
+              <select class="editor-select" id="collage-layout">
+                <option value="blur">Fond flou · 2 photos</option>
+                <option value="grid">Grille large</option>
+              </select>
+            </label>
+            <button class="template-button" type="button" data-template="event">Événement</button>
+            <button class="template-button" type="button" data-template="editorial">Éditorial</button>
+            <button class="template-button" type="button" data-template="product">Produit</button>
+            <button class="template-button" type="button" data-template="album">Musique</button>
+            <button class="template-button" type="button" data-template="story">Story</button>
+            <button class="template-button" type="button" data-template="gaming">Gaming</button>
+            <button class="template-button" type="button" data-template="dark">Dark</button>
+            <label class="snap-toggle" for="snap-guides">
+              <input id="snap-guides" type="checkbox" checked />
+              <span>Alignement auto</span>
+            </label>
+          </div>
+          <div class="canvas-shell" id="drop-zone">
+            <label class="empty-canvas" id="empty-state" for="image-upload">
+              <span class="upload-icon" aria-hidden="true">↑</span>
+              <span class="placeholder-badge">Importer une image</span>
+              <span class="canvas-placeholder">
+                <strong>Commencer une création</strong>
+                <span>Glissez une photo ici ou choisissez un fichier.</span>
+                <span class="upload-hint">JPG, PNG ou WebP · prêt à retoucher</span>
+              </span>
+            </label>
+            <canvas id="image-canvas" aria-label="Aperçu du design" hidden></canvas>
+          </div>
+          <button class="design-preview-exit" id="design-preview-exit" type="button" hidden>← Retour à l’éditeur</button>
+
+          <div class="editor-status" id="editor-status" role="status" aria-live="polite">
+            Importez une image pour commencer.
+          </div>
+
+          <div class="stage-footer">
+            <button class="chip-button" id="rotate-button" type="button" disabled>↻ Tourner</button>
+            <button class="chip-button" id="flip-button" type="button" disabled>⇋ Miroir</button>
+            <button class="chip-button design-preview-button" id="design-preview-button" type="button" aria-pressed="false" disabled title="Afficher le design final sans les panneaux de l’éditeur">◉ Aperçu du design</button>
+            <span class="footer-hint">Déplacez un calque en le faisant glisser, ou tirez un coin pour le redimensionner.</span>
+            <div class="desktop-shortcuts" aria-label="Raccourcis clavier">
+              <span><kbd>Ctrl Z</kbd> Annuler</span>
+              <span><kbd>Ctrl Maj Z</kbd> Rétablir</span>
+              <span><kbd>Ctrl D</kbd> Dupliquer</span>
+              <span><kbd>Suppr</kbd> Supprimer</span>
+            </div>
+            <label class="export-format">
+              Format
+              <select id="export-format" aria-label="Format d'export">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg">JPG</option>
+                <option value="image/webp">WebP</option>
+              </select>
+            </label>
+          </div>
+          <div class="workspace-dock" aria-label="Actions rapides">
+            <span class="dock-title">CALQUE</span>
+            <button class="dock-button" id="layer-rotate-minus" type="button" disabled>−15°</button>
+            <output class="dock-readout" id="selected-layer-rotation">0°</output>
+            <button class="dock-button" id="layer-rotate-plus" type="button" disabled>+15°</button>
+            <span class="dock-divider"></span>
+            <button class="dock-button" id="center-layer-button" type="button" disabled>Centrer</button>
+            <button class="dock-button" id="clear-drawing-button" type="button" disabled>Effacer traits</button>
+          </div>
+          <input id="image-upload" type="file" accept="image/jpeg,image/png,image/webp" hidden />
+        </section>
+
+        <details class="sidebar right-sidebar panel-accordion" id="styles-panel" open>
+          <summary class="panel-accordion-header">Styles & propriétés</summary>
+          <div class="panel-accordion-content">
+          <div class="mobile-drawer-header">
+            <span>Styles & propriétés</span>
+            <button class="mobile-drawer-close" type="button" data-mobile-panel-close aria-label="Fermer le menu Styles et propriétés">Fermer <span aria-hidden="true">×</span></button>
+          </div>
+          <div class="panel-block first-panel">
+            <div class="panel-title">Looks</div>
+            <div class="preset-grid" role="group" aria-label="Filtres prédéfinis">
+              <button class="preset active" type="button" data-preset="original">Original</button>
+              <button class="preset" type="button" data-preset="noir">Noir</button>
+              <button class="preset" type="button" data-preset="doux">Doux</button>
+              <button class="preset" type="button" data-preset="lumiere">Lumière</button>
+              <button class="preset" type="button" data-preset="cinema">Cinéma</button>
+              <button class="preset" type="button" data-preset="chaud">Doré</button>
+            </div>
+          </div>
+          <div class="panel-block">
+            <div class="panel-title">Arrière-plans</div>
+            <p class="panel-note">Visible sur une feuille blanche et dans les zones transparentes. Sur une photo opaque, utilisez d’abord la pipette de détourage.</p>
+            <div class="backdrop-grid" role="group" aria-label="Choisir un arrière-plan">
+              <button class="backdrop-choice active" type="button" data-backdrop="none" aria-pressed="true"><span class="backdrop-preview transparent-preview"></span><span>Transparent</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="graphite" aria-pressed="false"><span class="backdrop-preview graphite-preview"></span><span>Graphite</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="sand" aria-pressed="false"><span class="backdrop-preview sand-preview"></span><span>Sable</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="midnight" aria-pressed="false"><span class="backdrop-preview midnight-preview"></span><span>Minuit</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="forest" aria-pressed="false"><span class="backdrop-preview forest-preview"></span><span>Forêt</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="wine" aria-pressed="false"><span class="backdrop-preview wine-preview"></span><span>Bordeaux</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="charcoal" aria-pressed="false"><span class="backdrop-preview charcoal-preview"></span><span>Charbon</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="silver" aria-pressed="false"><span class="backdrop-preview silver-preview"></span><span>Argent</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="plum" aria-pressed="false"><span class="backdrop-preview plum-preview"></span><span>Prune</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="ocean" aria-pressed="false"><span class="backdrop-preview ocean-preview"></span><span>Océan</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="neon" aria-pressed="false"><span class="backdrop-preview neon-preview"></span><span>Néon</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="ember" aria-pressed="false"><span class="backdrop-preview ember-preview"></span><span>Braise</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="moss" aria-pressed="false"><span class="backdrop-preview moss-preview"></span><span>Mousse</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="rose" aria-pressed="false"><span class="backdrop-preview rose-preview"></span><span>Rose noir</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="aurora" aria-pressed="false"><span class="backdrop-preview aurora-preview"></span><span>Aurore</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="sunset" aria-pressed="false"><span class="backdrop-preview sunset-preview"></span><span>Crépuscule</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="ice" aria-pressed="false"><span class="backdrop-preview ice-preview"></span><span>Givre</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="candy" aria-pressed="false"><span class="backdrop-preview candy-preview"></span><span>Bonbon</span></button>
+              <button class="backdrop-choice" type="button" data-backdrop="grid" aria-pressed="false"><span class="backdrop-preview grid-preview"></span><span>Grille bleue</span></button>
+            </div>
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-title">Propriétés du calque</div>
+            <label class="sr-only" for="overlay-text">Texte du calque sélectionné</label>
+            <input id="overlay-text" type="text" placeholder="Sélectionnez ou ajoutez un texte" maxlength="80" disabled />
+            <label class="sr-only" for="text-font-search">Rechercher une police</label>
+            <input class="font-search" id="text-font-search" type="search" placeholder="Rechercher une police…" autocomplete="off" disabled />
+            <div class="font-filter-row" role="group" aria-label="Filtrer les polices">
+              <button class="font-filter active" type="button" data-font-filter="all" aria-pressed="true" disabled>Toutes</button>
+              <button class="font-filter" type="button" data-font-filter="gothic" aria-pressed="false" disabled>Gothiques</button>
+              <button class="font-filter" type="button" data-font-filter="serif" aria-pressed="false" disabled>Serif</button>
+              <button class="font-filter" type="button" data-font-filter="modern" aria-pressed="false" disabled>Sans serif</button>
+              <button class="font-filter" type="button" data-font-filter="script" aria-pressed="false" disabled>Manuscrites</button>
+              <button class="font-filter" type="button" data-font-filter="tech" aria-pressed="false" disabled>Tech</button>
+              <button class="font-filter" type="button" data-font-filter="local" aria-pressed="false" disabled>Locales</button>
+            </div>
+            <div class="font-preview-row">
+              <span id="text-font-preview" aria-live="polite">Aa Bb 0123</span>
+              <button class="font-favorite-button" id="font-favorite-toggle" type="button" aria-pressed="false" disabled>☆ Favori</button>
+            </div>
+            <div class="text-row">
+              <label class="sr-only" for="text-color">Couleur du texte</label>
+              <input id="text-color" type="color" value="#f3e7c9" disabled />
+              <label class="sr-only" for="text-font">Police du texte</label>
+              <select id="text-font" disabled>
+                <optgroup label="Google Fonts">
+                  <option value="Inter">Inter</option>
+                  <option value="Archivo">Archivo</option>
+                  <option value="Outfit">Outfit</option>
+                  <option value="Plus Jakarta Sans">Plus Jakarta Sans</option>
+                  <option value="Sora">Sora</option>
+                  <option value="Urbanist">Urbanist</option>
+                  <option value="Orbitron">Orbitron</option>
+                  <option value="Audiowide">Audiowide</option>
+                  <option value="Oxanium">Oxanium</option>
+                  <option value="Michroma">Michroma</option>
+                  <option value="Share Tech Mono">Share Tech Mono</option>
+                  <option value="Kanit">Kanit</option>
+                  <option value="League Spartan">League Spartan</option>
+                  <option value="Nunito">Nunito</option>
+                  <option value="Alegreya">Alegreya</option>
+                  <option value="Lora">Lora</option>
+                  <option value="Crimson Text">Crimson Text</option>
+                  <option value="Quicksand">Quicksand</option>
+                  <option value="Roboto">Roboto</option>
+                  <option value="Montserrat">Montserrat</option>
+                  <option value="Montserrat Alternates">Montserrat Alternates</option>
+                  <option value="Poppins">Poppins</option>
+                  <option value="DM Sans">DM Sans</option>
+                  <option value="Lato">Lato</option>
+                  <option value="Open Sans">Open Sans</option>
+                  <option value="Raleway">Raleway</option>
+                  <option value="Space Grotesk">Space Grotesk</option>
+                  <option value="Manrope">Manrope</option>
+                  <option value="Playfair Display">Playfair Display</option>
+                  <option value="Cormorant Garamond">Cormorant Garamond</option>
+                  <option value="DM Serif Display">DM Serif Display</option>
+                  <option value="Libre Baskerville">Libre Baskerville</option>
+                  <option value="Cinzel">Cinzel</option>
+                  <option value="Monsieur La Doulaise">Monsieur La Doulaise</option>
+                  <option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
+                  <option value="Grenze Gotisch">Grenze Gotisch</option>
+                  <option value="Germania One">Germania One</option>
+                  <option value="Pirata One">Pirata One</option>
+                  <option value="Eater">Eater</option>
+                  <option value="Jacquard 12">Jacquard 12</option>
+                  <option value="MedievalSharp">MedievalSharp</option>
+                  <option value="Metal Mania">Metal Mania</option>
+                  <option value="New Rocker">New Rocker</option>
+                  <option value="Rakkas">Rakkas</option>
+                  <option value="Rye">Rye</option>
+                  <option value="UnifrakturCook">UnifrakturCook</option>
+                  <option value="Merriweather">Merriweather</option>
+                  <option value="Oswald">Oswald</option>
+                  <option value="Bebas Neue">Bebas Neue</option>
+                  <option value="Roboto Mono">Roboto Mono</option>
+                  <option value="IBM Plex Mono">IBM Plex Mono</option>
+                  <option value="Space Mono">Space Mono</option>
+                  <option value="Courier Prime">Courier Prime</option>
+                  <option value="Fira Code">Fira Code</option>
+                  <option value="JetBrains Mono">JetBrains Mono</option>
+                  <option value="Ubuntu Mono">Ubuntu Mono</option>
+                  <option value="Source Sans 3">Source Sans 3</option>
+                </optgroup>
+                <optgroup label="Polices locales">
+                  <option value="KingsCross">KingsCross</option>
+                  <option value="Crosses">Crosses</option>
+                  <option value="Angel">Angel</option>
+                  <option value="Angel Variant">Angel · variante</option>
+                  <option value="Angela">Angela</option>
+                  <option value="Angelin">Angelin</option>
+                  <option value="AngelicWar">AngelicWar</option>
+                  <option value="Blackletter">Blackletter</option>
+                  <option value="Daustley">Daustley</option>
+                  <option value="GothicVille">GothicVille</option>
+                  <option value="Jellyka Vampire Street">Jellyka Vampire Street</option>
+                  <option value="Magnific">Magnific</option>
+                  <option value="Metal">Metal</option>
+                  <option value="XXII Scratch">XXII Scratch</option>
+                  <option value="Bleeding Cowboys">Bleeding Cowboys</option>
+                  <option value="Cakecafe">Cakecafe</option>
+                  <option value="CAMPUS PERSONAL USE">Campus</option>
+                  <option value="Doctor Glitch">Doctor Glitch</option>
+                  <option value="Hellbone-Demo">Hellbone</option>
+                  <option value="Ithorn">Ithorn</option>
+                  <option value="Old London">Old London</option>
+                  <option value="Rasley Heights">Rasley Heights</option>
+                  <option value="Ruritania">Ruritania</option>
+                  <option value="Ruritania Outline">Ruritania Outline</option>
+                  <option value="Seagram tfb">Seagram</option>
+                  <option value="Super Squad">Super Squad</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="text-gradient-control">
+              <label class="text-gradient-toggle" for="text-gradient-enabled">
+                <input id="text-gradient-enabled" type="checkbox" disabled />
+                <span>Dégradé 3 couleurs</span>
+              </label>
+              <div class="text-gradient-colors">
+                <label for="text-gradient-start"><span class="sr-only">Première couleur du dégradé</span><input id="text-gradient-start" data-gradient-color="gradientStart" type="color" value="#ff4d8d" disabled /></label>
+                <label for="text-gradient-middle"><span class="sr-only">Deuxième couleur du dégradé</span><input id="text-gradient-middle" data-gradient-color="gradientMiddle" type="color" value="#a855f7" disabled /></label>
+                <label for="text-gradient-end"><span class="sr-only">Troisième couleur du dégradé</span><input id="text-gradient-end" data-gradient-color="gradientEnd" type="color" value="#38bdf8" disabled /></label>
+              </div>
+            </div>
+            <div class="logo-tint-control">
+              <label class="text-gradient-toggle" for="logo-tint-enabled">
+                <input id="logo-tint-enabled" type="checkbox" disabled />
+                <span>Teinter ce logo</span>
+              </label>
+              <label class="logo-tint-color" for="logo-tint-color">
+                <span class="sr-only">Couleur de teinte du logo</span>
+                <input id="logo-tint-color" type="color" value="#e8d7b4" disabled />
+              </label>
+            </div>
+            <p class="panel-note">La teinte recolore uniquement les pixels visibles. Pour un résultat net, importez un PNG ou SVG avec fond transparent.</p>
+            <div class="text-symbols" role="group" aria-label="Insérer un symbole dans le texte">
+              <span>Symboles</span>
+              <button class="symbol-button" type="button" data-text-symbol="†" aria-label="Insérer une croix latine" title="Croix latine">†</button>
+              <button class="symbol-button" type="button" data-text-symbol="✝" aria-label="Insérer une croix" title="Croix">✝</button>
+              <button class="symbol-button" type="button" data-text-symbol="✟" aria-label="Insérer une croix ornée" title="Croix ornée">✟</button>
+              <button class="symbol-button" type="button" data-text-symbol="✠" aria-label="Insérer une croix gothique" title="Croix gothique">✠</button>
+              <button class="symbol-button" type="button" data-text-symbol="☩" aria-label="Insérer une croix orthodoxe" title="Croix orthodoxe">☩</button>
+              <button class="symbol-button" type="button" data-text-symbol="✦" aria-label="Insérer une étoile" title="Étoile">✦</button>
+              <button class="symbol-button" type="button" data-text-symbol="◆" aria-label="Insérer un diamant" title="Diamant">◆</button>
+              <button class="symbol-button" type="button" data-text-symbol="♛" aria-label="Insérer une couronne" title="Couronne">♛</button>
+              <button class="symbol-button" type="button" data-text-symbol="☾" aria-label="Insérer un croissant de lune" title="Lune">☾</button>
+              <button class="symbol-button" type="button" data-text-symbol="⸸" aria-label="Insérer une croix inverse" title="Croix inverse">⸸</button>
+            </div>
+            <div class="text-stroke-row">
+              <label class="range-wrap" for="text-stroke">
+                <span>Contour du texte</span><output data-value-for="text-stroke">0%</output>
+              </label>
+              <label class="stroke-color-control" for="text-stroke-color">
+                <span>Couleur</span>
+                <input id="text-stroke-color" type="color" value="#111111" disabled />
+              </label>
+            </div>
+            <input id="text-stroke" type="range" min="0" max="18" value="0" disabled />
+            <label class="text-underline-control" for="text-underline">
+              <input id="text-underline" type="checkbox" disabled />
+              <span>Souligner le texte</span>
+            </label>
+            <label class="range-wrap" for="text-size">
+              <span id="text-size-label">Taille du texte</span><output data-value-for="text-size">6%</output>
+            </label>
+            <input id="text-size" type="range" min="2" max="150" value="6" disabled />
+            <label class="range-wrap" for="layer-z-index">
+              <span>Ordre Z du calque</span>
+            </label>
+            <input class="editor-select layer-z-index-input" id="layer-z-index" type="number" min="1" max="1" step="1" value="1" disabled />
+            <p class="panel-note">Valeur élevée = au premier plan. Fonctionne pour les photos, textes et logos.</p>
+            <label class="range-wrap" for="layer-opacity">
+              <span>Opacité</span><output data-value-for="layer-opacity">100%</output>
+            </label>
+            <input id="layer-opacity" type="range" min="0" max="100" value="100" disabled />
+            <label class="range-wrap" for="layer-blur">
+              <span>Flou du calque</span><output data-value-for="layer-blur">0%</output>
+            </label>
+            <input id="layer-blur" type="range" min="0" max="80" value="0" disabled />
+            <p class="panel-note">Choisis la photo dans la liste des calques : le flou ne touche que le calque sélectionné. Textes et logos restent indépendants.</p>
+            <label class="range-wrap" for="layer-x">
+              <span>Position X</span><output data-value-for="layer-x">50%</output>
+            </label>
+            <input id="layer-x" type="range" min="0" max="100" value="50" disabled />
+            <label class="range-wrap" for="layer-y">
+              <span>Position Y</span><output data-value-for="layer-y">50%</output>
+            </label>
+            <input id="layer-y" type="range" min="0" max="100" value="50" disabled />
+            <label class="range-wrap" for="layer-rotation">
+              <span>Rotation du calque</span><output data-value-for="layer-rotation">0°</output>
+            </label>
+            <input id="layer-rotation" type="range" min="-180" max="180" value="0" disabled />
+            <label class="range-wrap" for="shadow-blur">
+              <span>Ombre</span><output data-value-for="shadow-blur">0</output>
+            </label>
+            <input id="shadow-blur" type="range" min="0" max="40" value="0" disabled />
+            <label class="shadow-color-control" for="shadow-color">
+              <span>Couleur de l’ombre</span>
+              <input id="shadow-color" type="color" value="#000000" disabled />
+            </label>
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-title">Finition</div>
+            <div class="frame-grid" role="group" aria-label="Style de cadre">
+              <button class="frame-sample sample-none active" type="button" data-frame="none" aria-label="Sans cadre" title="Sans cadre"></button>
+              <button class="frame-sample sample-gold" type="button" data-frame="gold" aria-label="Cadre doré" title="Doré"></button>
+              <button class="frame-sample sample-ivory" type="button" data-frame="ivory" aria-label="Cadre ivoire" title="Ivoire"></button>
+              <button class="frame-sample sample-film" type="button" data-frame="film" aria-label="Cadre cinéma" title="Pellicule"></button>
+              <button class="frame-sample sample-silver" type="button" data-frame="silver" aria-label="Cadre argent brossé" title="Argent brossé"></button>
+              <button class="frame-sample sample-gothic" type="button" data-frame="gothic" aria-label="Cadre gothique" title="Gothique"></button>
+              <button class="frame-sample sample-neon" type="button" data-frame="neon" aria-label="Cadre néon cyberpunk" title="Néon cyberpunk"></button>
+              <button class="frame-sample sample-double" type="button" data-frame="double" aria-label="Double filet luxe" title="Double filet"></button>
+              <button class="frame-sample sample-corners" type="button" data-frame="corners" aria-label="Coins argentés" title="Coins argentés"></button>
+              <button class="frame-sample sample-artdeco" type="button" data-frame="artdeco" aria-label="Cadre Art déco" title="Art déco"></button>
+              <button class="frame-sample sample-glitch" type="button" data-frame="glitch" aria-label="Cadre glitch" title="Glitch"></button>
+              <button class="frame-sample sample-stamp" type="button" data-frame="stamp" aria-label="Cadre tirage" title="Tirage"></button>
+              <button class="frame-sample sample-aurora" type="button" data-frame="aurora" aria-label="Cadre aurore" title="Aurore"></button>
+              <button class="frame-sample sample-ornate" type="button" data-frame="ornate" aria-label="Cadre ornemental" title="Ornemental"></button>
+              <button class="frame-sample sample-dotted" type="button" data-frame="dotted" aria-label="Cadre pointillé" title="Pointillé"></button>
+              <button class="frame-sample sample-minimal" type="button" data-frame="minimal" aria-label="Cadre minimal" title="Minimal"></button>
+            </div>
+            <label class="range-wrap" for="vignette">
+              <span>Vignette</span><output data-value-for="vignette">0%</output>
+            </label>
+            <input id="vignette" type="range" min="0" max="100" value="0" />
+            <label class="range-wrap" for="glow">
+              <span>Halo lumineux</span><output data-value-for="glow">0%</output>
+            </label>
+            <input id="glow" type="range" min="0" max="100" value="0" />
+          </div>
+          </div>
+        </details>
+      </main>
+    </div>
+    <div class="mobile-editor-backdrop" id="mobile-editor-backdrop" hidden></div>
+    <dialog class="replace-image-dialog" id="replace-image-dialog" aria-labelledby="replace-image-title" aria-describedby="replace-image-description">
+      <div class="replace-image-mark" aria-hidden="true">↻</div>
+      <p class="replace-image-kicker">NOUVELLE IMAGE</p>
+      <h2 id="replace-image-title">Remplacer cette création&nbsp;?</h2>
+      <p id="replace-image-description">La création actuelle sera remplacée. Enregistrez d’abord l’image si vous souhaitez la conserver.</p>
+      <div class="replace-image-actions">
+        <button class="btn btn-ghost" id="keep-current-image" type="button">Garder ma création</button>
+        <button class="btn btn-primary" id="confirm-image-replacement" type="button">Remplacer l’image</button>
+      </div>
+    </dialog>
+  </body>
+</html>
